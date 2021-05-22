@@ -83,6 +83,8 @@ class App extends React.Component {
         }
         self.setState({
           symbols: _.sortBy(response.stats.symbols, s => {
+            return s.symbol;
+            /*
             if (s.buy.openOrders.length > 0) {
               const openOrder = s.buy.openOrders[0];
               if (openOrder.differenceToCancel) {
@@ -99,6 +101,7 @@ class App extends React.Component {
               return (s.sell.difference + 1000) * -10;
             }
             return s.buy.difference;
+            */
           }),
           packageVersion: response.common.version,
           gitHash: response.common.gitHash,
