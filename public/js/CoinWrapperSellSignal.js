@@ -64,7 +64,7 @@ class CoinWrapperSellSignal extends React.Component {
             symbolInfo={symbolInfo}
             sendWebSocket={sendWebSocket}></CoinWrapperSellLastBuyPrice>
           {sell.currentProfit ? (
-            <div className='coin-info-column coin-info-column-price'>
+            <div className={'coin-info-column coin-info-column-price ' + (parseFloat(sell.currentProfit) < 0 ? 'bg-danger': 'bg-success')}>
               <span className='coin-info-label'>Profit/Loss:</span>
               <HightlightChange className='coin-info-value'>
                 {parseFloat(sell.currentProfit).toFixed(precision)} {quoteAsset}{' '}
